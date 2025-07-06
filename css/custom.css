@@ -1,115 +1,149 @@
-/* ========================
-   COMEBACK CUSTOM STYLES
-   ======================== */
+/* ==========================================================================
+   CUSTOM.CSS
+   Personal overrides for project-website-template
+   ========================================================================== */
 
+/* GENERAL TYPOGRAPHY & BODY */
 body {
-  font-family: 'Segoe UI', 'Open Sans', Arial, sans-serif;
-  background-color: #f8f9fa;
-  color: #333;
-  margin: 0;
-  padding: 0;
-  line-height: 1.6;
+  font-family: 'Roboto', 'Open Sans', Helvetica, Arial, sans-serif;
+  color: #222;
+  background-color: #f9f9f9;
 }
 
-/* HEADER */
-header {
-  background-color: #005f73; /* Deep teal */
-  color: #fff;
-  padding: 20px 40px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
+/* ===============================
+   Painting Frame - Modern Look
+   =============================== */
+.painting-frame .painting-frame-image {
+  border: 4px solid #fff;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
 
-header h1 {
-  margin: 0;
-  font-size: 28px;
+.painting-frame .painting-frame-caption {
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
+  font-weight: 500;
 }
 
-header nav {
-  display: flex;
-  flex-wrap: wrap;
+/* ===============================
+   Search Box - Sleeker
+   =============================== */
+.search-box-container .search-box {
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  padding: 8px 15px 8px 45px;
+  background: #fff;
 }
 
-header nav a {
-  color: #fff;
-  text-decoration: none;
-  margin-left: 20px;
-  transition: opacity 0.2s ease;
+.search-box-container .search-box-button {
+  left: 10px;
 }
 
-header nav a:hover {
-  opacity: 0.8;
+.search-box-container .search-box-icon {
+  fill: #555;
 }
 
-/* HERO SECTION */
-.hero {
-  background: #e0fbfc; /* Soft blue */
-  text-align: center;
-  padding: 60px 20px;
+.search-box-container .search-box-icon:hover {
+  fill: #000;
 }
 
-.hero h2 {
-  color: #005f73;
-  margin-top: 0;
-  font-size: 32px;
+/* ===============================
+   Custom Tab - Modern Tabs
+   =============================== */
+.custom-tab .custom-tab-menu {
+  border: none;
+  background: none;
 }
 
-.hero p {
-  font-size: 18px;
-  max-width: 600px;
-  margin: 0 auto;
+.custom-tab .custom-tab-menu-item {
+  border-bottom: 3px solid transparent;
+  background: none;
+  padding: 12px 20px;
+  font-weight: 600;
+  color: #555;
 }
 
-/* MAIN CONTENT */
-main {
-  max-width: 800px;
-  margin: 40px auto;
-  padding: 0 20px;
+.custom-tab .custom-tab-menu-item:hover {
+  background: none;
+  color: #000;
 }
 
-section {
-  margin-bottom: 40px;
+.custom-tab .custom-tab-menu-item.active {
+  border-bottom: 3px solid #007bff;
+  color: #007bff;
+  background: none;
 }
 
-section h2 {
-  color: #005f73;
-  margin-bottom: 10px;
+.custom-tab .custom-tab-content {
+  border: none;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
-ul {
-  padding-left: 20px;
+/* ===============================
+   Custom Radio - Refined
+   =============================== */
+.custom-radio [type="radio"]+label {
+  border-radius: 20px;
+  padding: 8px 20px 8px 35px;
+  border: 1px solid #bbb;
 }
 
-ul li {
-  margin-bottom: 10px;
+.custom-radio [type="radio"]:checked+label {
+  background: #007bff;
+  border-color: #007bff;
 }
 
+/* ===============================
+   Custom Dropdown - Polished
+   =============================== */
+.custom-dropdown > a {
+  border-radius: 4px;
+}
+
+.custom-dropdown > div {
+  border-radius: 4px;
+}
+
+/* ===============================
+   Dialog - Flat & Clean
+   =============================== */
+.custom-dialog-flat {
+  border-radius: 6px;
+}
+
+.custom-dialog-flat .ui-dialog-buttonpane .ui-dialog-buttonset .ui-button {
+  border-radius: 4px;
+}
+
+/* ===============================
+   Legend - Cleaner
+   =============================== */
+.custom-legend .legend-title {
+  background: #fff;
+  border-radius: 4px;
+}
+
+.custom-legend .legend-scale {
+  background: #fff;
+}
+
+/* ===============================
+   General Buttons
+   =============================== */
+button,
+.ui-button {
+  border-radius: 4px !important;
+}
+
+/* ===============================
+   Misc.
+   =============================== */
 a {
-  color: #0077b6;
+  color: #007bff;
 }
 
 a:hover {
   text-decoration: underline;
-}
-
-/* FOOTER */
-footer {
-  background-color: #005f73;
-  color: #fff;
-  text-align: center;
-  padding: 20px;
-}
-
-/* RESPONSIVE */
-@media (max-width: 600px) {
-  header {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  
-  header nav a {
-    margin: 10px 0 0 0;
-  }
 }

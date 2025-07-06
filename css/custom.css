@@ -1,57 +1,115 @@
+/* ========================
+   COMEBACK CUSTOM STYLES
+   ======================== */
+
 body {
-  font-family: 'Segoe UI', sans-serif;
-  background: #f8f9fa;
+  font-family: 'Segoe UI', 'Open Sans', Arial, sans-serif;
+  background-color: #f8f9fa;
   color: #333;
   margin: 0;
   padding: 0;
   line-height: 1.6;
 }
 
+/* HEADER */
 header {
-  background: #005f73;
+  background-color: #005f73; /* Deep teal */
   color: #fff;
   padding: 20px 40px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 header h1 {
   margin: 0;
+  font-size: 28px;
 }
 
-nav a {
+header nav {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+header nav a {
   color: #fff;
-  margin-left: 20px;
   text-decoration: none;
+  margin-left: 20px;
+  transition: opacity 0.2s ease;
 }
 
-nav a:hover {
-  text-decoration: underline;
+header nav a:hover {
+  opacity: 0.8;
 }
 
-.content {
-  max-width: 800px;
-  margin: 40px auto;
-  padding: 0 20px;
-}
-
+/* HERO SECTION */
 .hero {
+  background: #e0fbfc; /* Soft blue */
   text-align: center;
-  margin-bottom: 40px;
+  padding: 60px 20px;
 }
 
 .hero h2 {
   color: #005f73;
+  margin-top: 0;
+  font-size: 32px;
+}
+
+.hero p {
+  font-size: 18px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* MAIN CONTENT */
+main {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 0 20px;
 }
 
 section {
   margin-bottom: 40px;
 }
 
+section h2 {
+  color: #005f73;
+  margin-bottom: 10px;
+}
+
+ul {
+  padding-left: 20px;
+}
+
+ul li {
+  margin-bottom: 10px;
+}
+
+a {
+  color: #0077b6;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* FOOTER */
 footer {
-  background: #005f73;
+  background-color: #005f73;
   color: #fff;
   text-align: center;
   padding: 20px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  header nav a {
+    margin: 10px 0 0 0;
+  }
 }

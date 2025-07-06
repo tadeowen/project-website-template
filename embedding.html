@@ -1,32 +1,106 @@
 <!doctype html>
-<html>
+<html lang="en">
 
 <head>
   <title>Project Title</title>
   <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
-  <link href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" media="screen" rel="stylesheet" type="text/css" />
-  <link href="css/frame.css" media="screen" rel="stylesheet" type="text/css" />
-  <link href="css/controls.css" media="screen" rel="stylesheet" type="text/css" />
-  <link href="css/custom.css" media="screen" rel="stylesheet" type="text/css" />
-  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
-  <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700' rel='stylesheet' type='text/css'>
-  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700" rel="stylesheet">
+  <link href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" rel="stylesheet" />
+  <link href="css/frame.css" rel="stylesheet" />
+  <link href="css/controls.css" rel="stylesheet" />
+  <link href="css/custom.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Open+Sans+Condensed:300,700|Source+Sans+Pro:400,700" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="js/menu.js"></script>
   <style>
+    body {
+      margin: 0;
+      font-family: 'Open Sans', sans-serif;
+    }
+
     .menu-embedding {
-      color: rgb(255, 255, 255) !important;
+      color: #fff !important;
       opacity: 1 !important;
       font-weight: 700 !important;
+    }
+
+    .iframe-container {
+      width: 100%;
+      height: 500px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .iframe-container iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    .map-container {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 0 20px;
+      text-align: center;
+    }
+
+    .map-container h2 {
+      font-size: 28px;
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    .map-container iframe {
+      width: 100%;
+      height: 450px;
+      border: 0;
+      border-radius: 8px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    footer {
+      background: #333;
+      color: #fff;
+      text-align: center;
+      padding: 40px 20px;
+      font-size: 16px;
+    }
+
+    footer p {
+      margin: 0;
+      line-height: 1.6;
+    }
+
+    footer a {
+      color: #ffd700;
+      text-decoration: underline;
     }
   </style>
 </head>
 
 <body class="force-no-scroll">
   <div class="menu-container"></div>
+
+  <!-- Original iframe -->
   <div class="iframe-container">
-    <iframe class="iframe" src="https://yenchiah.me/geo-heatmap/GeoHeatmap.html"></iframe>
+    <iframe src="https://yenchiah.me/geo-heatmap/GeoHeatmap.html"></iframe>
   </div>
+
+  <!-- New: Google Map Embed for Makerere University -->
+  <div class="map-container">
+    <h2>Find Us at Makerere University</h2>
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.7460978113594!2d32.56840267499759!3d0.33951856399460444!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x177dbb59e72c5d0b%3A0x6aa1e1e7985f85c9!2sMakerere%20University!5e0!3m2!1sen!2sug!4v1714562725946!5m2!1sen!2sug"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </div>
+
+  <!-- Optional attractive footer -->
+  <footer>
+    <p><strong>Thank you for visiting us at Makerere University!</strong></p>
+    <p>Together, we make a difference — your support and engagement mean the world to us.</p>
+    <p>Contact us anytime: <a href="mailto:info@makerere.ac.ug">info@makerere.ac.ug</a></p>
+  </footer>
 </body>
 
 </html>

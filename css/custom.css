@@ -1,34 +1,57 @@
-/*************************************************************************
- * Your custom CSS file
- *************************************************************************/
-
-.custom-dropdown {
-  width: 240px;
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #f8f9fa;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
 }
 
-.custom-textbox {
-  width: 240px;
+header {
+  background: #005f73;
+  color: #fff;
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-#dialog-1,
-#dialog-2,
-#dialog-3,
-#dialog-4,
-#share-dialog {
-  display: none;
+header h1 {
+  margin: 0;
 }
 
-#share-url {
-  width: 100%;
-  -webkit-touch-callout: default !important;
-  -webkit-user-select: text !important;
-  -khtml-user-select: text !important;
-  -moz-user-select: text !important;
-  -ms-user-select: text !important;
-  user-select: text !important;
+nav a {
+  color: #fff;
+  margin-left: 20px;
+  text-decoration: none;
 }
 
-#share-url-copy-prompt {
-  display: none;
-  color: #007bff;
+nav a:hover {
+  text-decoration: underline;
+}
+
+.content {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.hero {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.hero h2 {
+  color: #005f73;
+}
+
+section {
+  margin-bottom: 40px;
+}
+
+footer {
+  background: #005f73;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
 }

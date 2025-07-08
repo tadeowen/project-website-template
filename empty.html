@@ -1,50 +1,107 @@
 <!doctype html>
-<html>
-
+<html lang="en">
 <head>
-  <title>Project Title</title>
+  <title>User Profile</title>
   <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
-  <link href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" media="screen" rel="stylesheet" type="text/css" />
-  <link href="css/frame.css" media="screen" rel="stylesheet" type="text/css" />
-  <link href="css/controls.css" media="screen" rel="stylesheet" type="text/css" />
-  <link href="css/custom.css" media="screen" rel="stylesheet" type="text/css" />
-  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
-  <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700' rel='stylesheet' type='text/css'>
-  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700" rel="stylesheet">
+  <link href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" rel="stylesheet" />
+  <link href="css/frame.css" rel="stylesheet" />
+  <link href="css/controls.css" rel="stylesheet" />
+  <link href="css/custom.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="js/menu.js"></script>
   <script src="js/footer.js"></script>
   <style>
-    .menu-index {
-      color: rgb(255, 255, 255) !important;
-      opacity: 1 !important;
-      font-weight: 700 !important;
+    .profile-container {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 20px;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    }
+    .profile-container h2 {
+      margin-top: 0;
+    }
+    .profile-field {
+      margin-bottom: 15px;
+    }
+    .profile-field label {
+      display: block;
+      font-weight: bold;
+    }
+    .profile-field input {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    .save-btn {
+      display: inline-block;
+      background: #007bff;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    .prayer-requests {
+      margin-top: 40px;
+    }
+    .prayer-requests h3 {
+      margin-bottom: 15px;
+    }
+    .prayer-item {
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      margin-bottom: 10px;
+      background: #f9f9f9;
     }
   </style>
 </head>
 
 <body>
   <div class="menu-container"></div>
-  <div class="content-container">
-    <div class="content">
-      <div class="content-table flex-column">
-        <div class="flex-row">
-          <div class="flex-item flex-column">
-            <p class="text">
-              Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel
-              augue. Curabitur ullamcorper ultricies nisi.
-            </p>
-            <h2>Heading 1</h2>
-            <hr>
-            <p class="text">
-              Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet.
-            </p>
-          </div>
-        </div>
+
+  <div class="profile-container">
+    <h2>My Profile</h2>
+    <form id="profileForm">
+      <div class="profile-field">
+        <label for="name">Name</label>
+        <input type="text" id="name" value="John Doe" />
+      </div>
+      <div class="profile-field">
+        <label for="email">Email</label>
+        <input type="email" id="email" value="john@example.com" />
+      </div>
+      <button type="button" class="save-btn" onclick="saveProfile()">Save Changes</button>
+    </form>
+
+    <div class="prayer-requests">
+      <h3>My Prayer Requests</h3>
+      <!-- Example prayer requests — these should be loaded dynamically in real use -->
+      <div class="prayer-item">
+        <strong>Request #1:</strong> Please pray for my family’s health.
+      </div>
+      <div class="prayer-item">
+        <strong>Request #2:</strong> I need guidance in my studies.
       </div>
     </div>
   </div>
-  <div class="footer-container"></div>
-</body>
 
+  <div class="footer-container"></div>
+
+  <script>
+    function saveProfile() {
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      alert('Profile saved!\nName: ' + name + '\nEmail: ' + email);
+      // Here, you’d send this data to your server using AJAX or fetch().
+    }
+
+    // Example: load prayer requests from localStorage or backend
+    // For a real app, use fetch() or jQuery AJAX to load and display user’s requests.
+  </script>
+</body>
 </html>

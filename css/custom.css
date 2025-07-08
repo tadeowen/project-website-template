@@ -1,38 +1,51 @@
 /* ==========================================================================
    CUSTOM.CSS
-   Personal overrides for project-website-template
+   Improved for Come Back - It's Time To Pray
    ========================================================================== */
 
 /* GENERAL TYPOGRAPHY & BODY */
 body {
   font-family: 'Roboto', 'Open Sans', Helvetica, Arial, sans-serif;
-  color: #222;
-  background-color: #f9f9f9;
+  color: #e0e0e0;
+  background: linear-gradient(
+    135deg,
+    #f9d976 0%,
+    #d97904 50%,
+    #3b0a15 100%
+  );
+  min-height: 100vh;
+  margin: 0;
 }
 
 /* ===============================
-   Painting Frame - Modern Look
+   Painting Frame - Modern Spiritual
    =============================== */
 .painting-frame .painting-frame-image {
   border: 4px solid #fff;
   border-radius: 8px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
 }
 
 .painting-frame .painting-frame-caption {
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.4);
   backdrop-filter: blur(5px);
   font-weight: 500;
+  color: #e0e0e0;
 }
 
 /* ===============================
-   Search Box - Sleeker
+   Search Box - Sleeker Warm
    =============================== */
 .search-box-container .search-box {
-  border: 1px solid #ccc;
+  border: 1px solid #eee;
   border-radius: 20px;
   padding: 8px 15px 8px 45px;
-  background: #fff;
+  background: rgba(255, 255, 255, 0.1);
+  color: #e0e0e0;
+}
+
+.search-box-container .search-box::placeholder {
+  color: #ddd;
 }
 
 .search-box-container .search-box-button {
@@ -40,15 +53,15 @@ body {
 }
 
 .search-box-container .search-box-icon {
-  fill: #555;
+  fill: #ddd;
 }
 
 .search-box-container .search-box-icon:hover {
-  fill: #000;
+  fill: #f9d976;
 }
 
 /* ===============================
-   Custom Tab - Modern Tabs
+   Custom Tab - Warm Tabs
    =============================== */
 .custom-tab .custom-tab-menu {
   border: none;
@@ -60,90 +73,131 @@ body {
   background: none;
   padding: 12px 20px;
   font-weight: 600;
-  color: #555;
+  color: #f1e7d0;
 }
 
 .custom-tab .custom-tab-menu-item:hover {
   background: none;
-  color: #000;
+  color: #f9d976;
 }
 
 .custom-tab .custom-tab-menu-item.active {
-  border-bottom: 3px solid #007bff;
-  color: #007bff;
+  border-bottom: 3px solid #f9d976;
+  color: #f9d976;
   background: none;
 }
 
 .custom-tab .custom-tab-content {
   border: none;
-  background: #fff;
+  background: rgba(255, 255, 255, 0.05);
   border-radius: 8px;
   box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  color: #e0e0e0;
 }
 
 /* ===============================
-   Custom Radio - Refined
+   Custom Radio - Warm Refined
    =============================== */
 .custom-radio [type="radio"]+label {
   border-radius: 20px;
   padding: 8px 20px 8px 35px;
   border: 1px solid #bbb;
+  background: rgba(255, 255, 255, 0.05);
+  color: #e0e0e0;
 }
 
 .custom-radio [type="radio"]:checked+label {
-  background: #007bff;
-  border-color: #007bff;
+  background: #f9d976;
+  border-color: #f9d976;
+  color: #3b0a15;
 }
 
 /* ===============================
-   Custom Dropdown - Polished
+   Custom Dropdown - Warm Polished
    =============================== */
 .custom-dropdown > a {
   border-radius: 4px;
+  background: rgba(255, 255, 255, 0.05);
+  color: #e0e0e0;
 }
 
 .custom-dropdown > div {
   border-radius: 4px;
+  background: #3b0a15;
+}
+
+.custom-dropdown > div > a {
+  color: #e0e0e0;
+}
+
+.custom-dropdown > div > a:hover {
+  background: #d97904;
+  color: #fff;
 }
 
 /* ===============================
-   Dialog - Flat & Clean
+   Dialog - Flat & Warm
    =============================== */
 .custom-dialog-flat {
   border-radius: 6px;
+  background: #3b0a15;
+  color: #e0e0e0;
 }
 
 .custom-dialog-flat .ui-dialog-buttonpane .ui-dialog-buttonset .ui-button {
   border-radius: 4px;
+  background: #f9d976;
+  border: 1px solid #f9d976;
+  color: #3b0a15;
+}
+
+.custom-dialog-flat .ui-dialog-buttonpane .ui-dialog-buttonset .ui-button:hover {
+  background: #d97904;
+  border-color: #d97904;
+  color: #fff;
 }
 
 /* ===============================
-   Legend - Cleaner
+   Legend - Warm & Clean
    =============================== */
 .custom-legend .legend-title {
-  background: #fff;
+  background: rgba(255, 255, 255, 0.1);
   border-radius: 4px;
+  color: #e0e0e0;
 }
 
 .custom-legend .legend-scale {
-  background: #fff;
+  background: rgba(255, 255, 255, 0.05);
+  color: #e0e0e0;
 }
 
 /* ===============================
-   General Buttons
+   General Buttons - Warm Accent
    =============================== */
 button,
 .ui-button {
   border-radius: 4px !important;
+  background: #f9d976;
+  border: 1px solid #f9d976;
+  color: #3b0a15;
+  transition: all 0.3s ease;
+}
+
+button:hover,
+.ui-button:hover {
+  background: #d97904;
+  border-color: #d97904;
+  color: #fff;
 }
 
 /* ===============================
-   Misc.
+   Misc. Links - Warm Accent
    =============================== */
 a {
-  color: #007bff;
+  color: #f9d976;
 }
 
 a:hover {
   text-decoration: underline;
+  color: #d97904;
 }

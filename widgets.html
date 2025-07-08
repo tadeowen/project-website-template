@@ -1,62 +1,92 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
+  <meta charset="utf-8" />
+  <title>Prayer Request</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Existing styles and fonts -->
+  <link href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" rel="stylesheet" />
+  <link href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/base/jquery-ui.css" rel="stylesheet" />
+  <link href="css/frame.css" rel="stylesheet" />
+  <link href="css/controls.css" rel="stylesheet" />
+  <link href="css/widgets.css" rel="stylesheet" />
+  <link href="css/custom.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Open+Sans+Condensed:300,700|Source+Sans+Pro:400,700" rel="stylesheet" />
+
+  <!-- JS Framework -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+  <script src="js/menu.js"></script>
+  <script src="js/footer.js"></script>
+  <script src="js/widgets.js"></script>
+  <script src="js/util.js"></script>
+  <script src="js/custom.js"></script>
+</head>
+
+<body>
+  <div class="menu-container"></div>
+
+  <div class="content-container">
+    <div class="content">
+      <div class="content-table flex-column">
+
+        <!-- Prayer Request Header -->
+        <div class="flex-row">
+          <div class="flex-item flex-column">
+            <h1 class="text-center">Submit a Prayer Request</h1>
+            <p class="text text-center">
+              We believe in the power of prayer. Please share your prayer request below and our prayer team will stand with you.
+            </p>
+          </div>
+        </div>
+
+        <!-- Prayer Request Form -->
+        <div class="flex-row">
+          <div class="flex-item flex-column">
+            <form id="prayer-request-form" class="custom-form">
+
+              <!-- Name -->
+              <div class="control-group">
+                <label for="name">Your Name</label>
+                <input id="name" name="name" class="custom-textbox full-width" type="text" placeholder="Enter your name" required>
+              </div>
+
+              <!-- Email -->
+              <div class="control-group">
+                <label for="email">Your Email (optional)</label>
+                <input id="email" name="email" class="custom-textbox full-width" type="email" placeholder="Enter your email">
+              </div>
+
+              <!-- Prayer Request -->
+              <div class="control-group">
+                <label for="request">Your Prayer Request</label>
+                <textarea id="request" name="request" class="custom-textarea full-width" rows="6" placeholder="Write your prayer request here..." required></textarea>
+              </div>
+
+              <!-- Submit -->
+              <div class="control-group">
+                <button type="submit" class="custom-button primary full-width">Submit Request</button>
+              </div>
+              <div id="confirmation-message" style="display:none;"></div>
+
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <div class="footer-container"></div>
+  </div>
+
+
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Submit a Prayer Request</title>
   <link href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" rel="stylesheet"/>
   <link href="css/custom.css" rel="stylesheet"/>
   <style>
-    body {
-      font-family: 'Open Sans', sans-serif;
-      background: linear-gradient(135deg, #f9f5e7, #f3e5ab);
-      margin: 0;
-      padding: 40px 20px;
-    }
-
-    .prayer-section {
-      max-width: 600px;
-      margin: auto;
-      background: #fff;
-      border-radius: 8px;
-      padding: 30px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-    }
-
-    .prayer-section h2 {
-      text-align: center;
-      color: #5a3e1b;
-    }
-
-    #prayer-form input, #prayer-form textarea {
-      width: 100%;
-      margin: 10px 0;
-      padding: 12px;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-      font-size: 16px;
-    }
-
-    #prayer-form button {
-      background: #5a3e1b;
-      color: #fff;
-      padding: 12px 30px;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-      font-size: 16px;
-    }
-
-    #confirmation-message {
-      display: none;
-      margin-top: 20px;
-      background: #e0ffe0;
-      padding: 15px;
-      border-radius: 6px;
-      color: #333;
-    }
-  </style>
-</head>
+  
 <body>
 
   <section class="prayer-section">

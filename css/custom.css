@@ -1,4 +1,4 @@
-/* ==========================================================================
+7/* ==========================================================================
    CUSTOM.CSS
    Improved for Come Back - It's Time To Pray
    ========================================================================== */
@@ -201,3 +201,59 @@ a:hover {
   text-decoration: underline;
   color: #d97904;
 }
+/* ===============================
+   Menu Bar
+   =============================== */
+.menu-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(5px);
+}
+
+.menu-bar a {
+  color: #f9d976;
+  text-decoration: none;
+  font-weight: 600;
+  margin-right: 20px;
+}
+
+.menu-bar a:hover {
+  color: #d97904;
+}
+
+.menu-bar .dropdown-content {
+  display: none;
+  position: absolute;
+  background: #3b0a15;
+  min-width: 160px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+  z-index: 1;
+}
+
+.menu-bar .library:hover .dropdown-content {
+  display: block;
+}
+
+.menu-bar .dropdown-content a {
+  color: #e0e0e0;
+  padding: 12px 16px;
+  display: block;
+}
+
+.menu-bar .dropdown-content a:hover {
+  background: #d97904;
+  color: #fff;
+}
+
+.sign-in a {
+  display: flex;
+  align-items: center;
+}
+
+.sign-in i {
+  margin-right: 8px;
+}
+

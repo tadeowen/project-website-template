@@ -1,1 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>COMEBACK – Sign In</title>
+
+  <link rel="icon" href="img/favicon.ico" type="image/x-icon" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Raleway:wght@300;400;600&display=swap" rel="stylesheet" />
+
+  <link href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" rel="stylesheet" />
+
+  <link href="css/frame.css" rel="stylesheet" />
+  <link href="css/controls.css" rel="stylesheet" />
+  <link href="css/custom.css" rel="stylesheet" />
+
+  <style>
+    :root {
+      --primary-color: #4a6b8a;
+      --secondary-color: #8a6b4a;
+      --light-color: #f8f5f0;
+      --dark-color: #333;
+      --accent-color: #a67c52;
+    }
+
+    body {
+      font-family: 'Raleway', sans-serif;
+      background-color: var(--light-color);
+      color: var(--dark-color);
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .signin-container {
+      background: white;
+      max-width: 400px;
+      width: 100%;
+      padding: 30px 25px;
+      border-radius: 10px;
+      box-shadow: 0 6px 25px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    .signin-container h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.4rem;
+      margin-bottom: 30px;
+      color: var(--primary-color);
+    }
+
+    form.signin-form {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    label {
+      font-weight: 600;
+      color: var(--dark-color);
+      text-align: left;
+      display: block;
+      margin-bottom: 8px;
+      font-size: 1rem;
+    }
+
+    input[type="email"],
+    input[type="password"] {
+      width: 100%;
+      padding: 12px 14px;
+      border: 1.5px solid #ccc;
+      border-radius: 6px;
+      font-size: 1rem;
+      transition: border-color 0.3s;
+    }
+
+    input[type="email"]:focus,
+    input[type="password"]:focus {
+      outline: none;
+      border-color: var(--secondary-color);
+      box-shadow: 0 0 6px var(--secondary-color);
+    }
+
+    .signin-btn {
+      background-color: var(--secondary-color);
+      color: white;
+      padding: 14px 0;
+      font-weight: 700;
+      font-size: 1.1rem;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      transition: background-color 0.3s, transform 0.2s;
+    }
+
+    .signin-btn:hover,
+    .signin-btn:focus {
+      background-color: var(--accent-color);
+      transform: translateY(-2px);
+      outline: none;
+    }
+
+    .signin-footer {
+      margin-top: 25px;
+      font-size: 0.9rem;
+      color: var(--dark-color);
+    }
+
+    .signin-footer a {
+      color: var(--secondary-color);
+      text-decoration: underline;
+    }
+
+    @media (max-width: 480px) {
+      .signin-container {
+        padding: 20px 15px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="signin-container" role="main" aria-labelledby="signinHeading">
+    <h2 id="signinHeading">Sign In to COMEBACK</h2>
+    <form class="signin-form" onsubmit="event.preventDefault(); signInUser();">
+      <label for="email">Email Address</label>
+      <input type="email" id="email" name="email" placeholder="you@example.com" required autocomplete="email" />
+
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" placeholder="Your password" required autocomplete="current-password" />
+
+      <button type="submit" class="signin-btn">Sign In</button>
+    </form>
+
+    <div class="signin-footer">
+      <p>Don't have an account? <a href="register.html">Register here</a></p>
+      <p><a href="forgot-password.html">Forgot your password?</a></p>
+    </div>
+  </main>
+
+  <script>
+    function signInUser() {
+      const email = document.getElementById('email').value.trim();
+      const password = document.getElementById('password').value;
+      if (!email || !password) {
+        alert('Please enter both email and password.');
+        return;
+      }
+      alert(`Signing in with\nEmail: ${email}`);
+      // TODO: Add authentication call here (e.g., Firebase, backend API)
+    }
+  </script>
+</body>
+
+</html>
 

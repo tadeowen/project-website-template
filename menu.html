@@ -1,16 +1,16 @@
 <!-- MENU START -->
-<nav class="menu-bar">
+<nav class="menu-bar" role="navigation" aria-label="Primary Navigation">
   <div class="menu-links">
-    <a href="index.html">Home</a>
-    <a href="widgets.html">Prayer Request</a>
-    <a href="empty.html">Profile</a>
-    <a href="embedding.html ">Location</a>
+    <a href="index.html" tabindex="0">Home</a>
+    <a href="widgets.html" tabindex="0">Prayer Request</a>
+    <a href="empty.html" tabindex="0">Profile</a>
+    <a href="embedding.html" tabindex="0">Location</a>
   </div>
 
   <!-- Sign In Icon -->
   <div class="sign-in">
-    <a href="signin.html" title="Sign In">
-      <i class="fas fa-user"></i> Sign In
+    <a href="signin.html" title="Sign In" tabindex="0" aria-label="Sign In">
+      <i class="fas fa-user" aria-hidden="true"></i> Sign In
     </a>
   </div>
 </nav>
@@ -52,12 +52,16 @@
     font-size: 18px;
     text-decoration: none;
     padding: 8px 10px;
-    transition: color 0.3s ease;
+    transition: color 0.3s ease, background-color 0.3s ease;
     user-select: none;
+    border-radius: 5px;
   }
 
-  .menu-links a:hover {
+  .menu-links a:hover,
+  .menu-links a:focus-visible {
     color: #d97904;
+    background-color: rgba(217, 121, 4, 0.15);
+    outline: none;
     cursor: pointer;
   }
 
@@ -81,12 +85,17 @@
     display: flex;
     align-items: center;
     gap: 8px;
-    transition: color 0.3s ease;
+    transition: color 0.3s ease, background-color 0.3s ease;
     user-select: none;
+    border-radius: 5px;
+    padding: 8px 10px;
   }
 
-  .sign-in a:hover {
+  .sign-in a:hover,
+  .sign-in a:focus-visible {
     color: #d97904;
+    background-color: rgba(217, 121, 4, 0.15);
+    outline: none;
   }
 
   /* Sign-in icon size */
@@ -99,6 +108,7 @@
     nav.menu-bar {
       flex-wrap: wrap;
       padding: 10px 20px;
+      justify-content: center;
     }
 
     .menu-links {

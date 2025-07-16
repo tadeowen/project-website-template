@@ -2,19 +2,20 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <title>Prayer Request</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Submit a Prayer Request</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <!-- Existing styles and fonts -->
+  <!-- Fonts and icons -->
   <link href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" rel="stylesheet" />
   <link href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/base/jquery-ui.css" rel="stylesheet" />
+
+  <!-- Your stylesheets -->
   <link href="css/frame.css" rel="stylesheet" />
   <link href="css/controls.css" rel="stylesheet" />
   <link href="css/widgets.css" rel="stylesheet" />
   <link href="css/custom.css" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Open+Sans+Condensed:300,700|Source+Sans+Pro:400,700" rel="stylesheet" />
 
-  <!-- JS Framework -->
+  <!-- JS Framework and scripts -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
   <script src="js/menu.js"></script>
@@ -22,115 +23,164 @@
   <script src="js/widgets.js"></script>
   <script src="js/util.js"></script>
   <script src="js/custom.js"></script>
-</head>
 
+  <style>
+    body {
+      background: linear-gradient(135deg, #f9d976 0%, #d97904 50%, #5b1f1f 100%);
+      color: #f0e9de;
+      font-family: 'Open Sans', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    .content-container {
+      max-width: 900px;
+      margin: 60px auto;
+      padding: 20px;
+      background: rgba(255 255 255 / 0.9);
+      border-radius: 8px;
+      color: #333;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    }
+    h1, h2 {
+      text-align: center;
+      color: #5b1f1f;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+    p.text-center {
+      text-align: center;
+      margin-bottom: 40px;
+      font-size: 1.1rem;
+      color: #5b1f1f;
+    }
+    form.custom-form {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .control-group {
+      margin-bottom: 20px;
+    }
+    label {
+      font-weight: 600;
+      display: block;
+      margin-bottom: 6px;
+      color: #5b1f1f;
+    }
+    input.custom-textbox,
+    textarea.custom-textarea {
+      width: 100%;
+      padding: 12px 10px;
+      border: 1px solid #d97904;
+      border-radius: 5px;
+      font-size: 1rem;
+      font-family: inherit;
+      resize: vertical;
+    }
+    input.custom-textbox:focus,
+    textarea.custom-textarea:focus {
+      outline: none;
+      border-color: #5b1f1f;
+      box-shadow: 0 0 6px #5b1f1faa;
+    }
+    button.custom-button.primary {
+      width: 100%;
+      background-color: #5b1f1f;
+      color: #f0e9de;
+      padding: 14px;
+      font-weight: 700;
+      font-size: 1.1rem;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    button.custom-button.primary:hover,
+    button.custom-button.primary:focus {
+      background-color: #d97904;
+      outline: none;
+    }
+    #confirmation-message {
+      margin-top: 30px;
+      padding: 20px;
+      background-color: #dff0d8;
+      border: 1px solid #3c763d;
+      color: #3c763d;
+      font-weight: 600;
+      border-radius: 6px;
+      display: none;
+      text-align: center;
+    }
+  </style>
+</head>
 <body>
   <div class="menu-container"></div>
 
-  <div class="content-container">
-    <div class="content">
-      <div class="content-table flex-column">
+  <main class="content-container" role="main" aria-labelledby="pageTitle">
+    <h1 id="pageTitle">Submit a Prayer Request</h1>
+    <p class="text-center">
+      We believe in the power of prayer. Please share your prayer request below, and our prayer team will stand with you.
+    </p>
 
-        <!-- Prayer Request Header -->
-        <div class="flex-row">
-          <div class="flex-item flex-column">
-            <h1 class="text-center">Submit a Prayer Request</h1>
-            <p class="text text-center">
-              We believe in the power of prayer. Please share your prayer request below and our prayer team will stand with you.
-            </p>
-          </div>
-        </div>
-
-        <!-- Prayer Request Form -->
-        <div class="flex-row">
-          <div class="flex-item flex-column">
-            <form id="prayer-request-form" class="custom-form">
-
-              <!-- Name -->
-              <div class="control-group">
-                <label for="name">Your Name</label>
-                <input id="name" name="name" class="custom-textbox full-width" type="text" placeholder="Enter your name" required>
-              </div>
-
-              <!-- Email -->
-              <div class="control-group">
-                <label for="email">Your Email (optional)</label>
-                <input id="email" name="email" class="custom-textbox full-width" type="email" placeholder="Enter your email">
-              </div>
-
-              <!-- Prayer Request -->
-              <div class="control-group">
-                <label for="request">Your Prayer Request</label>
-                <textarea id="request" name="request" class="custom-textarea full-width" rows="6" placeholder="Write your prayer request here..." required></textarea>
-              </div>
-
-              <!-- Submit -->
-              <div class="control-group">
-                <button type="submit" class="custom-button primary full-width">Submit Request</button>
-              </div>
-              <div id="confirmation-message" style="display:none;"></div>
-
-            </form>
-          </div>
-        </div>
-
+    <form id="prayer-request-form" class="custom-form" aria-describedby="confirmation-message" novalidate>
+      <div class="control-group">
+        <label for="name">Your Name <span aria-hidden="true" style="color:red">*</span></label>
+        <input id="name" name="name" class="custom-textbox" type="text" placeholder="Enter your name" required aria-required="true" />
       </div>
-    </div>
-    <div class="footer-container"></div>
-  </div>
 
+      <div class="control-group">
+        <label for="email">Your Email (optional)</label>
+        <input id="email" name="email" class="custom-textbox" type="email" placeholder="Enter your email" aria-describedby="emailHelp" />
+      </div>
 
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Submit a Prayer Request</title>
-  <link href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" rel="stylesheet"/>
-  <link href="css/custom.css" rel="stylesheet"/>
-  <style>
-  
-<body>
+      <div class="control-group">
+        <label for="request">Your Prayer Request <span aria-hidden="true" style="color:red">*</span></label>
+        <textarea id="request" name="request" class="custom-textarea" rows="6" placeholder="Write your prayer request here..." required aria-required="true"></textarea>
+      </div>
 
-  <section class="prayer-section">
-    <h2>Submit Your Prayer Request</h2>
-    <form id="prayer-form">
-      <input type="text" name="name" placeholder="Your Name" required>
-      <input type="email" name="email" placeholder="Your Email" required>
-      <textarea name="request" placeholder="Your Prayer Request" rows="6" required></textarea>
-      <button type="submit">Send Prayer Request</button>
+      <div class="control-group">
+        <button type="submit" class="custom-button primary">Submit Request</button>
+      </div>
     </form>
-    <div id="confirmation-message"></div>
-  </section>
+
+    <div id="confirmation-message" role="alert" aria-live="polite"></div>
+  </main>
+
+  <div class="footer-container"></div>
 
   <script>
-    document.getElementById('prayer-form').addEventListener('submit', function(e) {
+    document.getElementById('prayer-request-form').addEventListener('submit', function(e) {
       e.preventDefault();
 
-      // ✅ Generate unique confirmation code
-      const code = 'PRAYER-' + Math.random().toString(36).substr(2, 8).toUpperCase();
+      const form = this;
+      const name = form.name.value.trim();
+      const email = form.email.value.trim();
+      const request = form.request.value.trim();
 
-      // ✅ Show confirmation message
+      if (!name || !request) {
+        alert('Please fill in all required fields.');
+        return;
+      }
+
+      // Generate unique confirmation code
+      const code = 'PRAYER-' + Math.random().toString(36).substring(2, 10).toUpperCase();
+
+      // Show confirmation message
       const msg = document.getElementById('confirmation-message');
       msg.style.display = 'block';
       msg.innerHTML = `
-        <strong>Thank you for your prayer request!</strong><br>
+        <strong>Thank you for your prayer request, ${name}!</strong><br>
         Your confirmation code is: <b>${code}</b><br>
         Please keep this code for your records.
       `;
 
-      // ✅ OPTIONAL: Here you would send data to backend
-      // Example: save to localStorage for demo
-      const name = this.name.value;
-      const email = this.email.value;
-      const request = this.request.value;
-
-      const prayerData = {
-        name, email, request, code, date: new Date().toISOString()
-      };
+      // Optional: Save request to localStorage or send to backend
+      const prayerData = { name, email, request, code, date: new Date().toISOString() };
       localStorage.setItem('latestPrayerRequest', JSON.stringify(prayerData));
 
-      // ✅ Clear form
-      this.reset();
+      // Reset form after submission
+      form.reset();
+      form.name.focus();
     });
   </script>
-
 </body>
 </html>

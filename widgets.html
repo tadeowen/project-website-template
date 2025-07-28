@@ -36,7 +36,7 @@
       max-width: 900px;
       margin: 60px auto;
       padding: 20px;
-      background: rgba(255 255 255 / 0.9);
+      background: rgba(255, 255, 255, 0.9);
       border-radius: 8px;
       color: #333;
       box-shadow: 0 4px 20px rgba(0,0,0,0.1);
@@ -110,6 +110,15 @@
       display: none;
       text-align: center;
     }
+    .explanation-box {
+      background-color: #fff5e1;
+      border: 1px solid #f3c95f;
+      padding: 15px;
+      border-radius: 8px;
+      margin-bottom: 30px;
+      font-size: 1rem;
+      color: #5b1f1f;
+    }
   </style>
 </head>
 <body>
@@ -117,6 +126,20 @@
 
   <main class="content-container" role="main" aria-labelledby="pageTitle">
     <h1 id="pageTitle">Submit a Prayer Request</h1>
+
+    <div class="explanation-box">
+      <p>
+        <strong>About this Page:</strong> <br>
+        This page allows users to submit a personalized prayer intention directly to a religious leader of their faith. 
+        Inspired by the “ComeBack” app, students or faithfuls can enter their details, submit their need, and receive a unique confirmation code.
+      </p>
+      <p>
+        <strong>How it works:</strong><br>
+        Once the user submits their prayer request, the system logs the intention locally or can forward it to a backend system such as Firebase Firestore. 
+        The confirmation code helps track and follow up on the request, just as in the actual mobile app.
+      </p>
+    </div>
+
     <p class="text-center">
       We believe in the power of prayer. Please share your prayer request below, and our prayer team will stand with you.
     </p>
